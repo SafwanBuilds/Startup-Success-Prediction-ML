@@ -27,6 +27,7 @@ import os
 import pickle
 from dataclasses import dataclass
 from typing import Optional
+import joblib
 
 import numpy as np
 import pandas as pd
@@ -62,23 +63,15 @@ class PredictionResult:
 
 
 @st.cache_resource(show_spinner=False)
-def load_model():
-    """Load the pickled model from disk.
 
-    Returns
-    -------
-    object or None
-        The unpickled model object, or None if it could not be loaded.
-    """
-    try:
-        with open(MODEL_PATH, "rb") as f:
-            model = pickle.load(f)
-        return model
-    except FileNotFoundError:
-        return None
-    except Exception:
-        # Corrupt file, version mismatch, etc.
-        return None
+def load_model():
+    model_path = os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        "startup_model.pkl"
+    )
+    model = joblib.load(model_path)
+    return model
 
 
 def _build_feature_frame(
