@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Startup Success Prediction System
 
 A multi-page Streamlit application that predicts whether a startup will
@@ -75,3 +76,7 @@ startup-success-prediction/
 | Training Time      | 24.33s        | **10.62s**         |
 
 **Final model selected: Gradient Boosting Classifier.**
+=======
+# Startup-Success-Prediction-ML
+A machine learning-powered web application that predicts startup success or failure based on key business, financial, and operational features. The system compares multiple ML models and provides an interactive Streamlit interface for real-time predictions.
+>>>>>>> 717e6031b1d435cbef531d95c168a373d921522e
